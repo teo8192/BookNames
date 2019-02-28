@@ -1,7 +1,7 @@
-class Name:
-    def __init__(self, name, line_number):
+class Item:
+    def __init__(self, name, value):
         self.name = name
-        self.line_number = line_number
+        self.value = value
 
     def __str__(self):
         return "{} - {}".format(self.line_number, self.name)

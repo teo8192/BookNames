@@ -1,15 +1,20 @@
 import pickle
+from collections import defaultdict
+from statistics import mean, pstdev
 
 with open("names.dat", "rb") as f:
-    names = pickle.load(f)
+    items = pickle.load(f)
 
-name_counts = {}
-for name in names:
-    if not name.name in name_counts:
-        name_counts[name.name] = 0
-    name_counts[name.name] += 1
+item_counts = defaultdict(list)
+for item in items:
+    item_counts[item.name].append(item.value)
 
-sort_list = sorted(name_counts, key=name_counts.get, reverse=True)
+sort_list = sorted(item_counts, key=lambda name: len(item_counts.get(name)), reverse=True)
 
+output_string = "{:<20} {:<10} {:<10} {:<30}"
+print(output_string.format("Item", "Occurences", "Average", "Standard deviation"))
 for key in sort_list:
-    print("{} mentioned {} times".format(key, name_counts[key]))
+    count = len(item_counts[key])
+    line_mean = mean(item_counts[key])
+    line_variance = pstdev(item_counts[key], mu=line_mean)
+    print(output_string.format(key, count, int(line_mean), int(line_variance)))
