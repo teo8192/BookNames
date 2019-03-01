@@ -3064,8 +3064,6 @@ forget
 array
 discussed
 accurate
-stephen
-elizabeth
 climate
 reservations
 pin
@@ -3086,11 +3084,9 @@ establish
 gnu
 happened
 expressed
-jeff
 extent
 sharp
 lesbians
-ben
 lane
 paragraph
 kill
@@ -3633,7 +3629,6 @@ packaging
 solar
 jose
 catch
-jane
 pakistan
 ps
 reliable
